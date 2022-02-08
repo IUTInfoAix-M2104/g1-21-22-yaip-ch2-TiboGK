@@ -162,6 +162,7 @@ public class TD3 {  // Save as "TD3.java"
 		
 		System.out.print("Enter the exp : ");
 		exp = in.nextInt();
+		in.close();
 		System.out.println(base + " raises to the power of " + exp + " is: " + exponent(base, exp));
 	}
 
@@ -175,18 +176,49 @@ public class TD3 {  // Save as "TD3.java"
 		return product;
 	}
 	
-	public static void Exo102(){
-		int exp;    // exponent (non-negative integer)
-		int base;   // base (integer)
+	public static void Exo102(int number){
 		
-		Scanner in = new Scanner(System.in);
-		System.out.print("Enter the base : ");
-		base = in.nextInt();
-		
-		System.out.print("Enter the exp : ");
-		exp = in.nextInt();
-		System.out.println(base + " raises to the power of " + exp + " is: " + exponent(base, exp));
+		if (number%2 == 0){
+			System.out.println(number + " is an even number");
+		} else{
+			System.out.println(number + " is an odd number");
+		}
 	}
+	
+	public static void Exo91(){
+		final int NUM_ITEMS;
+		  int[] items;  // Declare array name, to be allocated after NUM_ITEMS is known
+		  String s;
+		  int cpt=0;
+
+		  Scanner in = new Scanner(System.in);
+		  System.out.print("Enter the number of item: ");
+		  NUM_ITEMS = in.nextInt();   // use next() to read a String
+
+		  // Allocate the array
+		  items = new int[NUM_ITEMS];
+
+		  // Prompt and read the items into the "int" array, if array length > 0
+		  if (items.length > 0) {
+			 System.out.print("Enter the value of all items (separated by space): ");
+			 for (int i = 0; i < items.length; ++i) {  // Read all items
+					items[i]= in.nextInt();
+			 }
+		  }
+		  System.out.print("The values are : ");
+		  // Print array contents, need to handle first item and subsequent items differently
+		  for (int i = 0; i < items.length; ++i) {
+			 if (i == 0) {
+				// Print the first item without a leading commas
+				System.out.print(items[i]);
+			 } else {
+				// Print the subsequent items with a leading commas
+				System.out.print(", "+items[i]);
+			 }
+			 // or, using a one liner
+			// System.out.print((i == 0) ? (items[i]) : (", "+items[i]));
+		  }
+		}
    
    
    public static void main(String[] args) {
@@ -255,11 +287,19 @@ public class TD3 {  // Save as "TD3.java"
 		*/
 		
 	//Test avec plusieurs valeurs de l'exo 10.2
-		
+		/*
 		System.out.println( "Exo 10.2" );
-		Exo102();
+		Exo102(9);
+		Exo102(8);
+		Exo102(-5);
 		System.out.println();
+		*/
 		
+	//Test avec plusieurs valeurs de l'exo 9.1
+		
+		System.out.println( "Exo 9.1" );
+		Exo91();
+		System.out.println();
 		
 		
 	}
