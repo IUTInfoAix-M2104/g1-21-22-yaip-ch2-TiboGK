@@ -90,6 +90,7 @@ public class TD3 {  // Save as "TD3.java"
 		} 
 	}
    
+   
    public static void main(String[] args) {
 	//Test avec plusieurs valeurs de l'exo 6.1
 		/*
